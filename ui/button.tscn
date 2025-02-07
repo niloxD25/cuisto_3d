@@ -43,6 +43,7 @@ offset_right = 552.0
 offset_bottom = 235.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Control"]
+layout_mode = 0
 offset_right = 552.0
 offset_bottom = 234.0
 
