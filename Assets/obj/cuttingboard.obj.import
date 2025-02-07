@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bfme6hdwd1lgt"
+path="res://.godot/imported/cuttingboard.obj-001b3254d5f84a0ed9557099b8df566d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cuttingboard.obj-001b3254d5f84a0ed9557099b8df566d.mesh"]
+
+source_file="res://Assets/obj/cuttingboard.obj"
+dest_files=["res://.godot/imported/cuttingboard.obj-001b3254d5f84a0ed9557099b8df566d.mesh", "res://.godot/imported/cuttingboard.obj-001b3254d5f84a0ed9557099b8df566d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

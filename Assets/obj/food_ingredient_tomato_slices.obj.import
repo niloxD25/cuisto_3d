@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c8u6vsueivvrb"
+path="res://.godot/imported/food_ingredient_tomato_slices.obj-1cb0a3e8f68a4d4910746234898ffcaf.mesh"
+
+[deps]
+
+files=["res://.godot/imported/food_ingredient_tomato_slices.obj-1cb0a3e8f68a4d4910746234898ffcaf.mesh"]
+
+source_file="res://Assets/obj/food_ingredient_tomato_slices.obj"
+dest_files=["res://.godot/imported/food_ingredient_tomato_slices.obj-1cb0a3e8f68a4d4910746234898ffcaf.mesh", "res://.godot/imported/food_ingredient_tomato_slices.obj-1cb0a3e8f68a4d4910746234898ffcaf.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

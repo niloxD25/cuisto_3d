@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cshrvwnnqaa1s"
+path="res://.godot/imported/pot_B_stew.obj-2cfd2629d8d1d2d02fb396a0992d203d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/pot_B_stew.obj-2cfd2629d8d1d2d02fb396a0992d203d.mesh"]
+
+source_file="res://Assets/obj/pot_B_stew.obj"
+dest_files=["res://.godot/imported/pot_B_stew.obj-2cfd2629d8d1d2d02fb396a0992d203d.mesh", "res://.godot/imported/pot_B_stew.obj-2cfd2629d8d1d2d02fb396a0992d203d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

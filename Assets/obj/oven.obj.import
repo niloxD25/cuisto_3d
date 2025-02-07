@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c0v1fj63urnid"
+path="res://.godot/imported/oven.obj-2a8c3133d23c00d74675b537f3e61e59.mesh"
+
+[deps]
+
+files=["res://.godot/imported/oven.obj-2a8c3133d23c00d74675b537f3e61e59.mesh"]
+
+source_file="res://Assets/obj/oven.obj"
+dest_files=["res://.godot/imported/oven.obj-2a8c3133d23c00d74675b537f3e61e59.mesh", "res://.godot/imported/oven.obj-2a8c3133d23c00d74675b537f3e61e59.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

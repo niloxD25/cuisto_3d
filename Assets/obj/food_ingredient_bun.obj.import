@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://detw7q32ccxg5"
+path="res://.godot/imported/food_ingredient_bun.obj-ec319110b134f169c5dde6ef6a28f8cc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/food_ingredient_bun.obj-ec319110b134f169c5dde6ef6a28f8cc.mesh"]
+
+source_file="res://Assets/obj/food_ingredient_bun.obj"
+dest_files=["res://.godot/imported/food_ingredient_bun.obj-ec319110b134f169c5dde6ef6a28f8cc.mesh", "res://.godot/imported/food_ingredient_bun.obj-ec319110b134f169c5dde6ef6a28f8cc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

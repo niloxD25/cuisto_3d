@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://creuv4v4fkd37"]
+
+[ext_resource type="Script" path="res://Script/button.gd" id="1_ik6ks"]
+[ext_resource type="Script" path="res://Script/fenetre_ui.gd" id="2_oj3lc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fgux1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_0qbh3"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="button" type="Area3D" parent="." node_paths=PackedStringArray("window")]
+script = ExtResource("1_ik6ks")
+window = NodePath("../Control")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="button"]
+shape = SubResource("BoxShape3D_fgux1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="button"]
+visible = false
+mesh = SubResource("BoxMesh_0qbh3")
+
+[node name="Label3D" type="Label3D" parent="button"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+text = "Hello"
+font_size = 200
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 0
+offset_right = 552.0
+offset_bottom = 235.0
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_right = 124.0
+offset_bottom = 26.0
+text = "Close"
+script = ExtResource("2_oj3lc")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 554.0
+offset_bottom = 236.0
+text = "Bonjour"
+horizontal_alignment = 1
+vertical_alignment = 1

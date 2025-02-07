@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bwvfo1ovddmcr"
+path="res://.godot/imported/mustard.obj-54eca8f6716b8e6aa2973134d9dcb56a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/mustard.obj-54eca8f6716b8e6aa2973134d9dcb56a.mesh"]
+
+source_file="res://Assets/obj/mustard.obj"
+dest_files=["res://.godot/imported/mustard.obj-54eca8f6716b8e6aa2973134d9dcb56a.mesh", "res://.godot/imported/mustard.obj-54eca8f6716b8e6aa2973134d9dcb56a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

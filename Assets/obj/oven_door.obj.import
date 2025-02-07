@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bcgppnebino7q"
+path="res://.godot/imported/oven_door.obj-904c0d7bfd517131ea8758530eca89ce.mesh"
+
+[deps]
+
+files=["res://.godot/imported/oven_door.obj-904c0d7bfd517131ea8758530eca89ce.mesh"]
+
+source_file="res://Assets/obj/oven_door.obj"
+dest_files=["res://.godot/imported/oven_door.obj-904c0d7bfd517131ea8758530eca89ce.mesh", "res://.godot/imported/oven_door.obj-904c0d7bfd517131ea8758530eca89ce.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

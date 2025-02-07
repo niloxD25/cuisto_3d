@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c05yuvh80td66"
+path="res://.godot/imported/stove_multi_decorated.obj-7159478833b242d4e225fd2a250dd1e5.mesh"
+
+[deps]
+
+files=["res://.godot/imported/stove_multi_decorated.obj-7159478833b242d4e225fd2a250dd1e5.mesh"]
+
+source_file="res://Assets/obj/stove_multi_decorated.obj"
+dest_files=["res://.godot/imported/stove_multi_decorated.obj-7159478833b242d4e225fd2a250dd1e5.mesh", "res://.godot/imported/stove_multi_decorated.obj-7159478833b242d4e225fd2a250dd1e5.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
