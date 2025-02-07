@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://creuv4v4fkd37"]
+[gd_scene load_steps=4 format=3 uid="uid://creuv4v4fkd37"]
 
 [ext_resource type="Script" path="res://Script/button.gd" id="1_ik6ks"]
-[ext_resource type="Script" path="res://Script/fenetre_ui.gd" id="2_oj3lc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fgux1"]
 
@@ -38,13 +37,6 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_right = 552.0
 offset_bottom = 235.0
-
-[node name="Button" type="Button" parent="Control"]
-layout_mode = 0
-offset_right = 124.0
-offset_bottom = 26.0
-text = "Close"
-script = ExtResource("2_oj3lc")
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 0

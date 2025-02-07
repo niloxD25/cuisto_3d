@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 @onready var anim_player = $AnimationPlayer  # Animation du personnage
 
-@export var speed = 5.0
+@export var speed = 20.0
 @export var jump_force = 4.5
 var gravity = 9.8  # Réduction de la gravité
 
