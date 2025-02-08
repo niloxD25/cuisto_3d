@@ -2,6 +2,8 @@ extends Node
 
 var withdrawn_items = {}  # Stockage global des ingrédients retirés
 var oven_dishes = {}  # Stockage des plats dans chaque four (StaticBody3D)
+var ingredients = {}
+var plat_id : String
 
 # Ajoute un retrait d'ingrédient
 func add_withdrawal(ingredient_id, quantite):
@@ -15,13 +17,16 @@ func get_withdrawals():
 	return withdrawn_items
 
 # Ajoute un plat dans un four donné (StaticBody3D)
-func add_dish_to_oven(oven_id: String, dish_name: String) -> bool:
+func add_dish_to_oven(oven_id: String, plat_id: int, ingredients: Array) -> bool:
 	if oven_id in oven_dishes:
 		print("❌ Erreur : Le four %s contient déjà un plat !" % oven_id)
 		return false  # Impossible d'ajouter un plat s'il y en a déjà un
 	else:
-		oven_dishes[oven_id] = dish_name
-		print("✅ Plat '%s' ajouté au four %s" % [dish_name, oven_id])
+		oven_dishes[oven_id] = plat_id
+		plat_id = plat_id
+		ingredients = ingredients
+		print("✅ Plat '%s' ajouté au four %s" % [plat_id, oven_id])
+		print("itoooooo   " , ingredients)
 		return true
 
 # Retire un plat d'un four donné

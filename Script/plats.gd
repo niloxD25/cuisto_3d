@@ -107,16 +107,22 @@ func update_ui(data):
 			plat_label.add_theme_font_size_override("font_size", 14)
 			plat_row.add_child(plat_label)
 
-			# Bouton "Choisir"
+						# Bouton "Choisir"
 			var choisir_button = Button.new()
 			choisir_button.text = "Choisir"
-			choisir_button.add_theme_color_override("font_color", Color(1, 1, 1)) # Texte blanc
-			choisir_button.add_theme_color_override("font_color_pressed", Color(0.9, 0.9, 0.9)) # Gris clair
-			choisir_button.add_theme_stylebox_override("normal", create_button_style(Color(0.3, 0.3, 0.3))) # Gris neutre
-			choisir_button.add_theme_stylebox_override("hover", create_button_style(Color(0.4, 0.4, 0.4))) # Gris clair
-			choisir_button.add_theme_stylebox_override("pressed", create_button_style(Color(0.2, 0.2, 0.2))) # Gris foncé
-			choisir_button.connect("pressed", Callable(self, "_on_choisir_pressed").bind(nom_plat, local_oven_id))
+			choisir_button.add_theme_color_override("font_color", Color(1, 1, 1))
+			choisir_button.add_theme_color_override("font_color_pressed", Color(0.9, 0.9, 0.9))
+			choisir_button.add_theme_stylebox_override("normal", create_button_style(Color(0.3, 0.3, 0.3)))
+			choisir_button.add_theme_stylebox_override("hover", create_button_style(Color(0.4, 0.4, 0.4)))
+			choisir_button.add_theme_stylebox_override("pressed", create_button_style(Color(0.2, 0.2, 0.2)))
+
+			# Récupérer les données nécessaires
+			var plat_id = plat.get("id", 0)
+			var ingredients = plat.get("ingredients", [])
+
+			choisir_button.connect("pressed", Callable(self, "_on_choisir_pressed").bind(plat_id, ingredients, local_oven_id))
 			plat_row.add_child(choisir_button)
+
 
 			commande_box.add_child(plat_row)
 
@@ -141,12 +147,12 @@ func create_button_style(color: Color) -> StyleBoxFlat:
 	style.corner_radius_top_right = 4
 	return style
 
-func _on_choisir_pressed(nom_plat: String, oven_id: String):
-	print("Plat choisi :", nom_plat, "Pour le four :", oven_id)
+func _on_choisir_pressed(plat_id: int, ingredients: Array, oven_id: String):
+	print("Plat choisi : ID =", plat_id, "Pour le four :", oven_id, "Ingrédients :", ingredients)
 	var session = get_node("/root/Session")
-	var success = session.add_dish_to_oven(oven_id, nom_plat)
+	var success = session.add_dish_to_oven(oven_id, plat_id, ingredients)
 
 	if success:
-		print("Plat '%s' ajouté au four %s" % [nom_plat, oven_id])
+		print("Plat ID '%s' ajouté au four %s" % [plat_id, oven_id])
 	else:
-		print("Échec de l'ajout du plat '%s' au four %s" % [nom_plat, oven_id])
+		print("Échec de l'ajout du plat ID '%s' au four %s" % [plat_id, oven_id])
