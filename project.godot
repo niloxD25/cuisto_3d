@@ -15,6 +15,7 @@ run/main_scene="res://Scene/main.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 config/main_scene="res://Scene/main.tscn"
+run/plugin_name=""
 
 [autoload]
 

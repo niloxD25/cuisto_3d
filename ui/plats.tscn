@@ -1,34 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://creuv4v4fkd37"]
+[gd_scene load_steps=4 format=3 uid="uid://b1ej13bnav3et"]
 
-[ext_resource type="Script" path="res://Script/button.gd" id="1_ik6ks"]
+[ext_resource type="Script" path="res://Script/plats.gd" id="1_16kkq"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_fgux1"]
-size = Vector3(7.93274, 1, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_gcc4a"]
+size = Vector3(2.12402, 2.7514, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_0qbh3"]
+[sub_resource type="BoxMesh" id="BoxMesh_thl6c"]
 
-[node name="Node3D" type="Node3D"]
+[node name="plats" type="Node3D"]
 
-[node name="button" type="Area3D" parent="." node_paths=PackedStringArray("window")]
-script = ExtResource("1_ik6ks")
-window = NodePath("../Control")
+[node name="button" type="Area3D" parent="."]
+script = ExtResource("1_16kkq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="button"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0145874, 0, 0)
-shape = SubResource("BoxShape3D_fgux1")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0145874, -0.094574, 0)
+shape = SubResource("BoxShape3D_gcc4a")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="button"]
 visible = false
-mesh = SubResource("BoxMesh_0qbh3")
+mesh = SubResource("BoxMesh_thl6c")
 
 [node name="Label3D" type="Label3D" parent="button"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 modulate = Color(0.356863, 0.27451, 1, 1)
 outline_modulate = Color(0, 0, 0, 0)
-text = "Les ingredients"
+text = "+"
 font_size = 200
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" type="Control" parent="."]
 visible = false

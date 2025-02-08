@@ -7,6 +7,9 @@ extends Area3D
 var http_request: HTTPRequest
 
 func _ready():
+	if not window:
+		window = get_parent().get_node_or_null("Control")
+		
 	if window:
 		scroll_container = window.get_node("ScrollContainer")
 		container = scroll_container.get_node("VBoxContainer")
@@ -25,7 +28,7 @@ func _on_input_event(camera, event, position, normal, shape_idx):
 			window.visible = !window.visible
 
 func perform_http_request():
-	var url = "http://192.168.1.173:8000/api/admin/stocks/all"
+	var url = "http://192.168.1.174:8000/api/admin/stocks/all"
 	var error = http_request.request(url)
 	if error != OK:
 		print("Erreur de requête HTTP:", error)
