@@ -1,0 +1,1569 @@
+[gd_scene load_steps=34 format=3 uid="uid://osh8g1l6v3a3"]
+
+[ext_resource type="ArrayMesh" uid="uid://b8npxmqdxxocx" path="res://Assets/obj/floor_kitchen.obj" id="1_wftib"]
+[ext_resource type="ArrayMesh" uid="uid://cvlck7w68eljy" path="res://Assets/obj/wall.obj" id="2_nve8w"]
+[ext_resource type="ArrayMesh" uid="uid://75kwld4u60am" path="res://Assets/obj/table_round_A.obj" id="2_rwtj6"]
+[ext_resource type="ArrayMesh" uid="uid://c05yuvh80td66" path="res://Assets/obj/stove_multi_decorated.obj" id="3_o8vry"]
+[ext_resource type="ArrayMesh" uid="uid://drmye7xmvh7rt" path="res://Assets/obj/dishrack_plates.obj" id="3_xxacn"]
+[ext_resource type="ArrayMesh" uid="uid://dvl73hpmnipw0" path="res://Assets/obj/table_round_A_decorated.obj" id="4_db4np"]
+[ext_resource type="ArrayMesh" uid="uid://dnin6qp5u4b1h" path="res://Assets/obj/chair_A.obj" id="5_guk5u"]
+[ext_resource type="ArrayMesh" uid="uid://dewbq13q53pp8" path="res://Assets/obj/table_round_B.obj" id="5_ku3tr"]
+[ext_resource type="ArrayMesh" uid="uid://dr8puuotqxrm6" path="res://Assets/obj/towelrail.obj" id="7_lqatx"]
+[ext_resource type="ArrayMesh" uid="uid://d2i8uxqrtpnj2" path="res://Assets/obj/kitchencabinet_corner_half.obj" id="8_pbihv"]
+[ext_resource type="ArrayMesh" uid="uid://dtibo35g8h5wu" path="res://Assets/obj/kitchencabinet.obj" id="9_a5bfq"]
+[ext_resource type="ArrayMesh" uid="uid://wac57onatsgm" path="res://Assets/obj/fridge_A_decorated.obj" id="12_krtlj"]
+[ext_resource type="ArrayMesh" uid="uid://b3y7mwgt1p3xr" path="res://Assets/obj/kitchencounter_straight_A.obj" id="13_ci1va"]
+[ext_resource type="ArrayMesh" uid="uid://d4c2rcdmh7dwc" path="res://Assets/obj/kitchencounter_sink_backsplash.obj" id="14_74pr7"]
+[ext_resource type="ArrayMesh" uid="uid://bnenhto7fe7y8" path="res://Assets/obj/kitchentable_sink_large_decorated.obj" id="15_75j0j"]
+[ext_resource type="ArrayMesh" uid="uid://c4it2t8ipfejg" path="res://Assets/obj/menu.obj" id="16_1lmfr"]
+[ext_resource type="ArrayMesh" uid="uid://i5hbk0t5iuxb" path="res://Assets/obj/shelf_papertowel_decorated.obj" id="17_apogb"]
+[ext_resource type="PackedScene" uid="uid://4i08jhcvfv4a" path="res://Scene/player.tscn" id="18_ug4re"]
+[ext_resource type="Script" path="res://Script/toggle.gd" id="19_58fly"]
+[ext_resource type="PackedScene" uid="uid://creuv4v4fkd37" path="res://ui/ingredients.tscn" id="19_r0jpe"]
+[ext_resource type="ArrayMesh" uid="uid://cfqjs2qhgclxk" path="res://Assets/obj/stove_multi.obj" id="19_v21lc"]
+[ext_resource type="PackedScene" uid="uid://b1ej13bnav3et" path="res://ui/plats.tscn" id="21_3adsk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xcab5"]
+size = Vector3(64.6043, 6.71593, 1.79834)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nww8y"]
+size = Vector3(1, 6.32922, 32.8105)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ippkw"]
+size = Vector3(65.6772, 1.7487, 63.9488)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xjiv8"]
+size = Vector3(29.4929, 2.75391, 5.22339)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oyeha"]
+size = Vector3(0.001, 5.73877, 39.6456)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8ao61"]
+size = Vector3(1, 4.20285, 5.70331)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_bgalv"]
+radius = 5.53558
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yksnl"]
+size = Vector3(3.24463, 4.20911, 8.43658)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ilgsg"]
+size = Vector3(4.16803, 2.45215, 6.24222)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_554qb"]
+size = Vector3(2.88727, 5.71359, 6.25342)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pkatj"]
+size = Vector3(6.297, 9.31796, 7.68237)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.5, 0.866025, 0, -0.866025, -0.5, 0, 12.9072, 0)
+light_energy = 1.5
+shadow_enabled = true
+
+[node name="walls" type="StaticBody3D" parent="."]
+
+[node name="wall long2" type="Node3D" parent="walls"]
+transform = Transform3D(-4.37114e-08, -1.74846e-07, -1, 0, 1, -1.74846e-07, 1, -7.64274e-15, -4.37114e-08, -1.1012, 0, -12.7656)
+
+[node name="Wall2" type="MeshInstance3D" parent="walls/wall long2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.04025, 1.41709, 24.4326)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../../..")
+
+[node name="Wall" type="MeshInstance3D" parent="walls/wall long2/Wall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.98973, 0.0382857, 0.0852623)
+mesh = ExtResource("2_nve8w")
+
+[node name="Wall2" type="MeshInstance3D" parent="walls/wall long2/Wall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.97946, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall3" type="MeshInstance3D" parent="walls/wall long2/Wall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.97946, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall4" type="MeshInstance3D" parent="walls/wall long2/Wall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9774, 0.0467472, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall6" type="MeshInstance3D" parent="walls/wall long2/Wall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.8331, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall7" type="MeshInstance3D" parent="walls/wall long2/Wall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.814, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall8" type="MeshInstance3D" parent="walls/wall long2/Wall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.7949, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall9" type="MeshInstance3D" parent="walls/wall long2/Wall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.709, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall3" type="MeshInstance3D" parent="walls/wall long2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.3271, 1.41709, 24.3269)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../../..")
+
+[node name="Wall" type="MeshInstance3D" parent="walls/wall long2/Wall3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.98973, 0.0382857, 0.0852623)
+mesh = ExtResource("2_nve8w")
+
+[node name="Wall2" type="MeshInstance3D" parent="walls/wall long2/Wall3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.97946, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall3" type="MeshInstance3D" parent="walls/wall long2/Wall3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.97946, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall4" type="MeshInstance3D" parent="walls/wall long2/Wall3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9774, 0.0467472, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall6" type="MeshInstance3D" parent="walls/wall long2/Wall3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.8331, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall7" type="MeshInstance3D" parent="walls/wall long2/Wall3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.814, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall8" type="MeshInstance3D" parent="walls/wall long2/Wall3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.7949, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall9" type="MeshInstance3D" parent="walls/wall long2/Wall3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.709, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall court" type="MeshInstance3D" parent="walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.04025, 1.41709, -38.2328)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../..")
+
+[node name="Wall" type="MeshInstance3D" parent="walls/Wall court"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.98973, 0.0382857, 0.0852623)
+mesh = ExtResource("2_nve8w")
+
+[node name="Wall2" type="MeshInstance3D" parent="walls/Wall court"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.97946, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall3" type="MeshInstance3D" parent="walls/Wall court"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.97946, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall4" type="MeshInstance3D" parent="walls/Wall court"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9774, 0.0467472, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall6" type="MeshInstance3D" parent="walls/Wall court"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.8331, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall7" type="MeshInstance3D" parent="walls/Wall court"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.814, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall8" type="MeshInstance3D" parent="walls/Wall court"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.7949, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall9" type="MeshInstance3D" parent="walls/Wall court"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.709, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall4" type="MeshInstance3D" parent="walls"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 36.9691, 1.41709, -4.9394)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../..")
+
+[node name="Wall" type="MeshInstance3D" parent="walls/Wall4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.98973, 0.0382857, 0.0852623)
+mesh = ExtResource("2_nve8w")
+
+[node name="Wall2" type="MeshInstance3D" parent="walls/Wall4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.97946, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall3" type="MeshInstance3D" parent="walls/Wall4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.97946, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall4" type="MeshInstance3D" parent="walls/Wall4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9774, 0.0467472, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall6" type="MeshInstance3D" parent="walls/Wall4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.8331, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall7" type="MeshInstance3D" parent="walls/Wall4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.814, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall8" type="MeshInstance3D" parent="walls/Wall4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.7949, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall9" type="MeshInstance3D" parent="walls/Wall4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.709, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="wall long" type="Node3D" parent="walls"]
+
+[node name="Wall2" type="MeshInstance3D" parent="walls/wall long"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.04025, 1.41709, 24.4326)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../../..")
+
+[node name="Wall" type="MeshInstance3D" parent="walls/wall long/Wall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.98973, 0.0382857, 0.0852623)
+mesh = ExtResource("2_nve8w")
+
+[node name="Wall2" type="MeshInstance3D" parent="walls/wall long/Wall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.97946, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall3" type="MeshInstance3D" parent="walls/wall long/Wall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.97946, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall4" type="MeshInstance3D" parent="walls/wall long/Wall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9774, 0.0467472, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall6" type="MeshInstance3D" parent="walls/wall long/Wall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.8331, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall7" type="MeshInstance3D" parent="walls/wall long/Wall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.814, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall8" type="MeshInstance3D" parent="walls/wall long/Wall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.7949, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall9" type="MeshInstance3D" parent="walls/wall long/Wall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.709, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall3" type="MeshInstance3D" parent="walls/wall long"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.3271, 1.41709, 24.3269)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../../..")
+
+[node name="Wall" type="MeshInstance3D" parent="walls/wall long/Wall3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.98973, 0.0382857, 0.0852623)
+mesh = ExtResource("2_nve8w")
+
+[node name="Wall2" type="MeshInstance3D" parent="walls/wall long/Wall3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.97946, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall3" type="MeshInstance3D" parent="walls/wall long/Wall3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.97946, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall4" type="MeshInstance3D" parent="walls/wall long/Wall3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9774, 0.0467472, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall6" type="MeshInstance3D" parent="walls/wall long/Wall3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.8331, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall7" type="MeshInstance3D" parent="walls/wall long/Wall3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.814, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall8" type="MeshInstance3D" parent="walls/wall long/Wall3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.7949, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="Wall9" type="MeshInstance3D" parent="walls/wall long/Wall3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.709, 0.0765715, 0.170525)
+mesh = ExtResource("2_nve8w")
+skeleton = NodePath("../Wall")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="walls/wall long"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.28206, 4.1268, 23.9364)
+shape = SubResource("BoxShape3D_xcab5")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.2298, 3.9982, 9.29826)
+shape = SubResource("BoxShape3D_nww8y")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="walls"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25.3301, 4.1268, -6.78452)
+shape = SubResource("BoxShape3D_xcab5")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="walls"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.65619, 3.69357, -37.9646)
+shape = SubResource("BoxShape3D_nww8y")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.53767, 3.9982, -22.8028)
+shape = SubResource("BoxShape3D_nww8y")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="walls"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 21.5779, 3.69357, -6.36906)
+shape = SubResource("BoxShape3D_nww8y")
+
+[node name="floors" type="StaticBody3D" parent="."]
+
+[node name="FloorKitchen" type="MeshInstance3D" parent="floors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0531459, 0.951827, -0.960443)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../..")
+
+[node name="FloorKitchen5" type="MeshInstance3D" parent="floors/FloorKitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0474062, 0.0777686, 15.932)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen6" type="MeshInstance3D" parent="floors/FloorKitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8788, 0.0777689, 15.9549)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen11" type="MeshInstance3D" parent="floors/FloorKitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027287, 0.0777687, 11.9371)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen12" type="MeshInstance3D" parent="floors/FloorKitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.92895, 0.0790709, 11.9727)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen13" type="MeshInstance3D" parent="floors/FloorKitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00836706, 0.0437441, 23.6563)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen14" type="MeshInstance3D" parent="floors/FloorKitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.91784, 0.0437444, 23.6792)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen15" type="MeshInstance3D" parent="floors/FloorKitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.053658, 0.0437442, 19.6614)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen16" type="MeshInstance3D" parent="floors/FloorKitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.96799, 0.0450464, 19.697)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen2" type="MeshInstance3D" parent="floors/FloorKitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.92621, 3.57628e-07, 0.0229037)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen7" type="MeshInstance3D" parent="floors/FloorKitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0452905, 1.19209e-07, -3.99487)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen8" type="MeshInstance3D" parent="floors/FloorKitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.97636, 0.00130236, -3.95931)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen3" type="MeshInstance3D" parent="floors/FloorKitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0099771, 0.0141485, 8.02835)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen4" type="MeshInstance3D" parent="floors/FloorKitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.89245, 0.0141488, 8.05125)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen9" type="MeshInstance3D" parent="floors/FloorKitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0202887, 0.0141486, 4.03348)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen10" type="MeshInstance3D" parent="floors/FloorKitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9426, 0.0154508, 4.06904)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen2" type="MeshInstance3D" parent="floors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8706, 0.951827, -0.960443)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../..")
+
+[node name="FloorKitchen5" type="MeshInstance3D" parent="floors/FloorKitchen2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0474062, 0.0777686, 15.932)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen6" type="MeshInstance3D" parent="floors/FloorKitchen2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8788, 0.0777689, 15.9549)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen11" type="MeshInstance3D" parent="floors/FloorKitchen2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027287, 0.0777687, 11.9371)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen12" type="MeshInstance3D" parent="floors/FloorKitchen2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.92895, 0.0790709, 11.9727)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen13" type="MeshInstance3D" parent="floors/FloorKitchen2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00836706, 0.0437441, 23.6563)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen14" type="MeshInstance3D" parent="floors/FloorKitchen2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.91784, 0.0437444, 23.6792)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen15" type="MeshInstance3D" parent="floors/FloorKitchen2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.053658, 0.0437442, 19.6614)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen16" type="MeshInstance3D" parent="floors/FloorKitchen2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.96799, 0.0450464, 19.697)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen2" type="MeshInstance3D" parent="floors/FloorKitchen2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.92621, 3.57628e-07, 0.0229037)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen7" type="MeshInstance3D" parent="floors/FloorKitchen2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0452905, 1.19209e-07, -3.99487)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen8" type="MeshInstance3D" parent="floors/FloorKitchen2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.97636, 0.00130236, -3.95931)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen3" type="MeshInstance3D" parent="floors/FloorKitchen2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0099771, 0.0141485, 8.02835)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen4" type="MeshInstance3D" parent="floors/FloorKitchen2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.89245, 0.0141488, 8.05125)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen9" type="MeshInstance3D" parent="floors/FloorKitchen2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0202887, 0.0141486, 4.03348)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen10" type="MeshInstance3D" parent="floors/FloorKitchen2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9426, 0.0154508, 4.06904)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen3" type="MeshInstance3D" parent="floors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6507, 0.953554, -1.05274)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../..")
+
+[node name="FloorKitchen5" type="MeshInstance3D" parent="floors/FloorKitchen3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0474062, 0.0777686, 15.932)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen6" type="MeshInstance3D" parent="floors/FloorKitchen3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8788, 0.0777689, 15.9549)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen11" type="MeshInstance3D" parent="floors/FloorKitchen3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027287, 0.0777687, 11.9371)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen12" type="MeshInstance3D" parent="floors/FloorKitchen3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.92895, 0.0790709, 11.9727)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen13" type="MeshInstance3D" parent="floors/FloorKitchen3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00836706, 0.0437441, 23.6563)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen14" type="MeshInstance3D" parent="floors/FloorKitchen3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.91784, 0.0437444, 23.6792)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen15" type="MeshInstance3D" parent="floors/FloorKitchen3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.053658, 0.0437442, 19.6614)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen16" type="MeshInstance3D" parent="floors/FloorKitchen3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.96799, 0.0450464, 19.697)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen2" type="MeshInstance3D" parent="floors/FloorKitchen3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.92621, 3.57628e-07, 0.0229037)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen7" type="MeshInstance3D" parent="floors/FloorKitchen3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0452905, 1.19209e-07, -3.99487)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen8" type="MeshInstance3D" parent="floors/FloorKitchen3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.97636, 0.00130236, -3.95931)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen3" type="MeshInstance3D" parent="floors/FloorKitchen3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0099771, 0.0141485, 8.02835)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen4" type="MeshInstance3D" parent="floors/FloorKitchen3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.89245, 0.0141488, 8.05125)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen9" type="MeshInstance3D" parent="floors/FloorKitchen3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0202887, 0.0141486, 4.03348)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen10" type="MeshInstance3D" parent="floors/FloorKitchen3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9426, 0.0154508, 4.06904)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen4" type="MeshInstance3D" parent="floors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5271, 0.842424, -0.9786)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../..")
+
+[node name="FloorKitchen5" type="MeshInstance3D" parent="floors/FloorKitchen4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0474062, 0.0777686, 15.932)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen6" type="MeshInstance3D" parent="floors/FloorKitchen4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8788, 0.0777689, 15.9549)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen11" type="MeshInstance3D" parent="floors/FloorKitchen4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027287, 0.0777687, 11.9371)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen12" type="MeshInstance3D" parent="floors/FloorKitchen4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.92895, 0.0790709, 11.9727)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen13" type="MeshInstance3D" parent="floors/FloorKitchen4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00836706, 0.0437441, 23.6563)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen14" type="MeshInstance3D" parent="floors/FloorKitchen4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.91784, 0.0437444, 23.6792)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen15" type="MeshInstance3D" parent="floors/FloorKitchen4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.053658, 0.0437442, 19.6614)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen16" type="MeshInstance3D" parent="floors/FloorKitchen4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.96799, 0.0450464, 19.697)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen2" type="MeshInstance3D" parent="floors/FloorKitchen4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.92621, 3.57628e-07, 0.0229037)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen7" type="MeshInstance3D" parent="floors/FloorKitchen4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0452905, 1.19209e-07, -3.99487)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen8" type="MeshInstance3D" parent="floors/FloorKitchen4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.97636, 0.00130236, -3.95931)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen3" type="MeshInstance3D" parent="floors/FloorKitchen4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0099771, 0.0141485, 8.02835)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen4" type="MeshInstance3D" parent="floors/FloorKitchen4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.89245, 0.0141488, 8.05125)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen9" type="MeshInstance3D" parent="floors/FloorKitchen4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0202887, 0.0141486, 4.03348)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen10" type="MeshInstance3D" parent="floors/FloorKitchen4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9426, 0.0154508, 4.06904)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen5" type="MeshInstance3D" parent="floors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0531459, 0.951827, -32.53)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../..")
+
+[node name="FloorKitchen5" type="MeshInstance3D" parent="floors/FloorKitchen5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0474062, 0.0777686, 15.932)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen6" type="MeshInstance3D" parent="floors/FloorKitchen5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8788, 0.0777689, 15.9549)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen11" type="MeshInstance3D" parent="floors/FloorKitchen5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027287, 0.0777687, 11.9371)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen12" type="MeshInstance3D" parent="floors/FloorKitchen5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.92895, 0.0790709, 11.9727)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen13" type="MeshInstance3D" parent="floors/FloorKitchen5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00836706, 0.0437441, 23.6563)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen14" type="MeshInstance3D" parent="floors/FloorKitchen5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.91784, 0.0437444, 23.6792)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen15" type="MeshInstance3D" parent="floors/FloorKitchen5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.053658, 0.0437442, 19.6614)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen16" type="MeshInstance3D" parent="floors/FloorKitchen5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.96799, 0.0450464, 19.697)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen2" type="MeshInstance3D" parent="floors/FloorKitchen5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.92621, 3.57628e-07, 0.0229037)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen7" type="MeshInstance3D" parent="floors/FloorKitchen5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0452905, 1.19209e-07, -3.99487)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen8" type="MeshInstance3D" parent="floors/FloorKitchen5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.97636, 0.00130236, -3.95931)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen3" type="MeshInstance3D" parent="floors/FloorKitchen5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0099771, 0.0141485, 8.02835)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen4" type="MeshInstance3D" parent="floors/FloorKitchen5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.89245, 0.0141488, 8.05125)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen9" type="MeshInstance3D" parent="floors/FloorKitchen5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0202887, 0.0141486, 4.03348)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen10" type="MeshInstance3D" parent="floors/FloorKitchen5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9426, 0.0154508, 4.06904)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen6" type="MeshInstance3D" parent="floors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8706, 0.951827, -32.53)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../..")
+
+[node name="FloorKitchen5" type="MeshInstance3D" parent="floors/FloorKitchen6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0474062, 0.0777686, 15.932)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen6" type="MeshInstance3D" parent="floors/FloorKitchen6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8788, 0.0777689, 15.9549)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen11" type="MeshInstance3D" parent="floors/FloorKitchen6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027287, 0.0777687, 11.9371)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen12" type="MeshInstance3D" parent="floors/FloorKitchen6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.92895, 0.0790709, 11.9727)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen13" type="MeshInstance3D" parent="floors/FloorKitchen6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00836706, 0.0437441, 23.6563)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen14" type="MeshInstance3D" parent="floors/FloorKitchen6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.91784, 0.0437444, 23.6792)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen15" type="MeshInstance3D" parent="floors/FloorKitchen6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.053658, 0.0437442, 19.6614)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen16" type="MeshInstance3D" parent="floors/FloorKitchen6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.96799, 0.0450464, 19.697)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen2" type="MeshInstance3D" parent="floors/FloorKitchen6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.92621, 3.57628e-07, 0.0229037)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen7" type="MeshInstance3D" parent="floors/FloorKitchen6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0452905, 1.19209e-07, -3.99487)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen8" type="MeshInstance3D" parent="floors/FloorKitchen6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.97636, 0.00130236, -3.95931)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen3" type="MeshInstance3D" parent="floors/FloorKitchen6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0099771, 0.0141485, 8.02835)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen4" type="MeshInstance3D" parent="floors/FloorKitchen6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.89245, 0.0141488, 8.05125)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen9" type="MeshInstance3D" parent="floors/FloorKitchen6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0202887, 0.0141486, 4.03348)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen10" type="MeshInstance3D" parent="floors/FloorKitchen6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9426, 0.0154508, 4.06904)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen7" type="MeshInstance3D" parent="floors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6507, 0.953554, -32.6223)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../..")
+
+[node name="FloorKitchen5" type="MeshInstance3D" parent="floors/FloorKitchen7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0474062, 0.0777686, 15.932)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen6" type="MeshInstance3D" parent="floors/FloorKitchen7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8788, 0.0777689, 15.9549)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen11" type="MeshInstance3D" parent="floors/FloorKitchen7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027287, 0.0777687, 11.9371)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen12" type="MeshInstance3D" parent="floors/FloorKitchen7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.92895, 0.0790709, 11.9727)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen13" type="MeshInstance3D" parent="floors/FloorKitchen7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00836706, 0.0437441, 23.6563)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen14" type="MeshInstance3D" parent="floors/FloorKitchen7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.91784, 0.0437444, 23.6792)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen15" type="MeshInstance3D" parent="floors/FloorKitchen7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.053658, 0.0437442, 19.6614)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen16" type="MeshInstance3D" parent="floors/FloorKitchen7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.96799, 0.0450464, 19.697)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen2" type="MeshInstance3D" parent="floors/FloorKitchen7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.92621, 3.57628e-07, 0.0229037)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen7" type="MeshInstance3D" parent="floors/FloorKitchen7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0452905, 1.19209e-07, -3.99487)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen8" type="MeshInstance3D" parent="floors/FloorKitchen7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.97636, 0.00130236, -3.95931)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen3" type="MeshInstance3D" parent="floors/FloorKitchen7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0099771, 0.0141485, 8.02835)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen4" type="MeshInstance3D" parent="floors/FloorKitchen7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.89245, 0.0141488, 8.05125)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen9" type="MeshInstance3D" parent="floors/FloorKitchen7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0202887, 0.0141486, 4.03348)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen10" type="MeshInstance3D" parent="floors/FloorKitchen7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9426, 0.0154508, 4.06904)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen8" type="MeshInstance3D" parent="floors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5271, 0.842424, -32.5481)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../..")
+
+[node name="FloorKitchen5" type="MeshInstance3D" parent="floors/FloorKitchen8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0474062, 0.0777686, 15.932)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen6" type="MeshInstance3D" parent="floors/FloorKitchen8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8788, 0.0777689, 15.9549)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen11" type="MeshInstance3D" parent="floors/FloorKitchen8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027287, 0.0777687, 11.9371)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen12" type="MeshInstance3D" parent="floors/FloorKitchen8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.92895, 0.0790709, 11.9727)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen13" type="MeshInstance3D" parent="floors/FloorKitchen8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00836706, 0.0437441, 23.6563)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen14" type="MeshInstance3D" parent="floors/FloorKitchen8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.91784, 0.0437444, 23.6792)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen15" type="MeshInstance3D" parent="floors/FloorKitchen8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.053658, 0.0437442, 19.6614)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen16" type="MeshInstance3D" parent="floors/FloorKitchen8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.96799, 0.0450464, 19.697)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen2" type="MeshInstance3D" parent="floors/FloorKitchen8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.92621, 3.57628e-07, 0.0229037)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen7" type="MeshInstance3D" parent="floors/FloorKitchen8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0452905, 1.19209e-07, -3.99487)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen8" type="MeshInstance3D" parent="floors/FloorKitchen8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.97636, 0.00130236, -3.95931)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen3" type="MeshInstance3D" parent="floors/FloorKitchen8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0099771, 0.0141485, 8.02835)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen4" type="MeshInstance3D" parent="floors/FloorKitchen8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.89245, 0.0141488, 8.05125)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen9" type="MeshInstance3D" parent="floors/FloorKitchen8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0202887, 0.0141486, 4.03348)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen10" type="MeshInstance3D" parent="floors/FloorKitchen8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9426, 0.0154508, 4.06904)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen9" type="MeshInstance3D" parent="floors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.4672, 0.951827, -0.960443)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../..")
+
+[node name="FloorKitchen5" type="MeshInstance3D" parent="floors/FloorKitchen9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0474062, 0.0777686, 15.932)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen6" type="MeshInstance3D" parent="floors/FloorKitchen9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8788, 0.0777689, 15.9549)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen11" type="MeshInstance3D" parent="floors/FloorKitchen9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027287, 0.0777687, 11.9371)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen12" type="MeshInstance3D" parent="floors/FloorKitchen9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.92895, 0.0790709, 11.9727)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen13" type="MeshInstance3D" parent="floors/FloorKitchen9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00836706, 0.0437441, 23.6563)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen14" type="MeshInstance3D" parent="floors/FloorKitchen9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.91784, 0.0437444, 23.6792)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen15" type="MeshInstance3D" parent="floors/FloorKitchen9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.053658, 0.0437442, 19.6614)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen16" type="MeshInstance3D" parent="floors/FloorKitchen9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.96799, 0.0450464, 19.697)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen2" type="MeshInstance3D" parent="floors/FloorKitchen9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.92621, 3.57628e-07, 0.0229037)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen7" type="MeshInstance3D" parent="floors/FloorKitchen9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0452905, 1.19209e-07, -3.99487)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen8" type="MeshInstance3D" parent="floors/FloorKitchen9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.97636, 0.00130236, -3.95931)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen3" type="MeshInstance3D" parent="floors/FloorKitchen9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0099771, 0.0141485, 8.02835)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen4" type="MeshInstance3D" parent="floors/FloorKitchen9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.89245, 0.0141488, 8.05125)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen9" type="MeshInstance3D" parent="floors/FloorKitchen9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0202887, 0.0141486, 4.03348)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen10" type="MeshInstance3D" parent="floors/FloorKitchen9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9426, 0.0154508, 4.06904)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen10" type="MeshInstance3D" parent="floors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5435, 0.951827, -0.960443)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../..")
+
+[node name="FloorKitchen5" type="MeshInstance3D" parent="floors/FloorKitchen10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0474062, 0.0777686, 15.932)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen6" type="MeshInstance3D" parent="floors/FloorKitchen10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8788, 0.0777689, 15.9549)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen11" type="MeshInstance3D" parent="floors/FloorKitchen10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027287, 0.0777687, 11.9371)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen12" type="MeshInstance3D" parent="floors/FloorKitchen10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.92895, 0.0790709, 11.9727)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen13" type="MeshInstance3D" parent="floors/FloorKitchen10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00836706, 0.0437441, 23.6563)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen14" type="MeshInstance3D" parent="floors/FloorKitchen10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.91784, 0.0437444, 23.6792)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen15" type="MeshInstance3D" parent="floors/FloorKitchen10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.053658, 0.0437442, 19.6614)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen16" type="MeshInstance3D" parent="floors/FloorKitchen10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.96799, 0.0450464, 19.697)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen2" type="MeshInstance3D" parent="floors/FloorKitchen10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.92621, 3.57628e-07, 0.0229037)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen7" type="MeshInstance3D" parent="floors/FloorKitchen10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0452905, 1.19209e-07, -3.99487)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen8" type="MeshInstance3D" parent="floors/FloorKitchen10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.97636, 0.00130236, -3.95931)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen3" type="MeshInstance3D" parent="floors/FloorKitchen10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0099771, 0.0141485, 8.02835)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen4" type="MeshInstance3D" parent="floors/FloorKitchen10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.89245, 0.0141488, 8.05125)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen9" type="MeshInstance3D" parent="floors/FloorKitchen10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0202887, 0.0141486, 4.03348)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen10" type="MeshInstance3D" parent="floors/FloorKitchen10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9426, 0.0154508, 4.06904)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen11" type="MeshInstance3D" parent="floors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7634, 0.953554, -1.05274)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../..")
+
+[node name="FloorKitchen5" type="MeshInstance3D" parent="floors/FloorKitchen11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0474062, 0.0777686, 15.932)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen6" type="MeshInstance3D" parent="floors/FloorKitchen11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8788, 0.0777689, 15.9549)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen11" type="MeshInstance3D" parent="floors/FloorKitchen11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027287, 0.0777687, 11.9371)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen12" type="MeshInstance3D" parent="floors/FloorKitchen11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.92895, 0.0790709, 11.9727)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen13" type="MeshInstance3D" parent="floors/FloorKitchen11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00836706, 0.0437441, 23.6563)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen14" type="MeshInstance3D" parent="floors/FloorKitchen11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.91784, 0.0437444, 23.6792)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen15" type="MeshInstance3D" parent="floors/FloorKitchen11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.053658, 0.0437442, 19.6614)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen16" type="MeshInstance3D" parent="floors/FloorKitchen11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.96799, 0.0450464, 19.697)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen2" type="MeshInstance3D" parent="floors/FloorKitchen11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.92621, 3.57628e-07, 0.0229037)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen7" type="MeshInstance3D" parent="floors/FloorKitchen11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0452905, 1.19209e-07, -3.99487)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen8" type="MeshInstance3D" parent="floors/FloorKitchen11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.97636, 0.00130236, -3.95931)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen3" type="MeshInstance3D" parent="floors/FloorKitchen11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0099771, 0.0141485, 8.02835)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen4" type="MeshInstance3D" parent="floors/FloorKitchen11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.89245, 0.0141488, 8.05125)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen9" type="MeshInstance3D" parent="floors/FloorKitchen11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0202887, 0.0141486, 4.03348)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen10" type="MeshInstance3D" parent="floors/FloorKitchen11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9426, 0.0154508, 4.06904)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen12" type="MeshInstance3D" parent="floors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.88698, 0.842424, -0.9786)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../..")
+
+[node name="FloorKitchen5" type="MeshInstance3D" parent="floors/FloorKitchen12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0474062, 0.0777686, 15.932)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen6" type="MeshInstance3D" parent="floors/FloorKitchen12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8788, 0.0777689, 15.9549)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen11" type="MeshInstance3D" parent="floors/FloorKitchen12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027287, 0.0777687, 11.9371)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen12" type="MeshInstance3D" parent="floors/FloorKitchen12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.92895, 0.0790709, 11.9727)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen13" type="MeshInstance3D" parent="floors/FloorKitchen12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00836706, 0.0437441, 23.6563)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen14" type="MeshInstance3D" parent="floors/FloorKitchen12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.91784, 0.0437444, 23.6792)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen15" type="MeshInstance3D" parent="floors/FloorKitchen12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.053658, 0.0437442, 19.6614)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen16" type="MeshInstance3D" parent="floors/FloorKitchen12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.96799, 0.0450464, 19.697)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../FloorKitchen10")
+
+[node name="FloorKitchen2" type="MeshInstance3D" parent="floors/FloorKitchen12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.92621, 3.57628e-07, 0.0229037)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen7" type="MeshInstance3D" parent="floors/FloorKitchen12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0452905, 1.19209e-07, -3.99487)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen8" type="MeshInstance3D" parent="floors/FloorKitchen12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.97636, 0.00130236, -3.95931)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen3" type="MeshInstance3D" parent="floors/FloorKitchen12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0099771, 0.0141485, 8.02835)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen4" type="MeshInstance3D" parent="floors/FloorKitchen12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.89245, 0.0141488, 8.05125)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen9" type="MeshInstance3D" parent="floors/FloorKitchen12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0202887, 0.0141486, 4.03348)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="FloorKitchen10" type="MeshInstance3D" parent="floors/FloorKitchen12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9426, 0.0154508, 4.06904)
+mesh = ExtResource("1_wftib")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.65051, 0.709452, -6.52599)
+shape = SubResource("BoxShape3D_ippkw")
+
+[node name="decos" type="StaticBody3D" parent="."]
+
+[node name="DishrackPlates" type="MeshInstance3D" parent="decos"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -24.1652, 2.79349, -24.0389)
+mesh = ExtResource("3_xxacn")
+skeleton = NodePath("../..")
+
+[node name="KitchencabinetCornerHalf" type="MeshInstance3D" parent="decos"]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, -25.5598, -7.79236, -35.1325)
+mesh = ExtResource("8_pbihv")
+skeleton = NodePath("../..")
+
+[node name="Towelrail" type="MeshInstance3D" parent="decos"]
+transform = Transform3D(-2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, 1.12427, 3.54005, 25.8948)
+mesh = ExtResource("7_lqatx")
+skeleton = NodePath("../..")
+
+[node name="ChairA" type="MeshInstance3D" parent="decos"]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 25.4111, 1.46416, 20.8461)
+mesh = ExtResource("5_guk5u")
+skeleton = NodePath("../..")
+
+[node name="TableRoundA" type="MeshInstance3D" parent="decos"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 30.0854, 1.44214, -0.183599)
+mesh = ExtResource("2_rwtj6")
+skeleton = NodePath("../..")
+
+[node name="TableRoundADecorated" type="MeshInstance3D" parent="decos"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 26.5882, 1.55341, 9.20006)
+mesh = ExtResource("4_db4np")
+skeleton = NodePath("../..")
+
+[node name="TableRoundB" type="MeshInstance3D" parent="decos"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 30.0364, 1.4312, 19.7307)
+mesh = ExtResource("5_ku3tr")
+
+[node name="Kitchencabinet" type="MeshInstance3D" parent="decos"]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, -25.6885, -4.63669, -29.0023)
+mesh = ExtResource("9_a5bfq")
+skeleton = NodePath("../..")
+
+[node name="ChairA2" type="MeshInstance3D" parent="decos"]
+transform = Transform3D(1, 0, 1.73205, 0, 2, 0, -1.73205, 0, 1, 26.0767, 1.46416, 16.065)
+mesh = ExtResource("5_guk5u")
+
+[node name="ChairA3" type="MeshInstance3D" parent="decos"]
+transform = Transform3D(1.73205, 0, 1, 0, 2, 0, -1, 0, 1.73205, 30.2954, 1.46416, 14.8332)
+mesh = ExtResource("5_guk5u")
+
+[node name="ChairA4" type="MeshInstance3D" parent="decos"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 34.0539, 1.46416, 17.088)
+mesh = ExtResource("5_guk5u")
+
+[node name="ChairA5" type="MeshInstance3D" parent="decos"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 34.0539, 1.46416, -0.479906)
+mesh = ExtResource("5_guk5u")
+
+[node name="ChairA6" type="MeshInstance3D" parent="decos"]
+transform = Transform3D(-2, 0, 1.74846e-07, 0, 2, 0, -1.74846e-07, 0, -2, 31.1447, 1.46416, 3.52099)
+mesh = ExtResource("5_guk5u")
+
+[node name="ChairA7" type="MeshInstance3D" parent="decos"]
+transform = Transform3D(-1.53209, 0, 1.28558, 0, 2, 0, -1.28558, 0, -1.53209, 26.9016, 1.46416, 3.42833)
+mesh = ExtResource("5_guk5u")
+
+[node name="ChairA8" type="MeshInstance3D" parent="decos"]
+transform = Transform3D(-0.0697989, 0, 1.99878, 0, 2, 0, -1.99878, 0, -0.0697989, 25.7192, 1.46416, -0.489143)
+mesh = ExtResource("5_guk5u")
+
+[node name="DishrackPlates2" type="MeshInstance3D" parent="decos"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -24.1652, 2.79349, -21.7387)
+mesh = ExtResource("3_xxacn")
+skeleton = NodePath("../..")
+
+[node name="DishrackPlates3" type="MeshInstance3D" parent="decos"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -24.1652, 2.79349, -19.4147)
+mesh = ExtResource("3_xxacn")
+skeleton = NodePath("../..")
+
+[node name="Towelrail2" type="MeshInstance3D" parent="decos"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -10.4875, 3.54005, -39.8157)
+mesh = ExtResource("7_lqatx")
+skeleton = NodePath("../..")
+
+[node name="FridgeADecorated" type="MeshInstance3D" parent="decos"]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, -23.334, 1.23617, -2.64457)
+mesh = ExtResource("12_krtlj")
+skeleton = NodePath("../..")
+
+[node name="FridgeADecorated2" type="MeshInstance3D" parent="decos"]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, -23.334, 1.23617, -6.86852)
+mesh = ExtResource("12_krtlj")
+skeleton = NodePath("../..")
+
+[node name="KitchencounterStraightA" type="MeshInstance3D" parent="decos"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -17.8679, 1.46109, -35.7611)
+mesh = ExtResource("13_ci1va")
+skeleton = NodePath("../..")
+
+[node name="KitchencounterStraightA2" type="MeshInstance3D" parent="decos"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14.018, 1.46109, -35.7611)
+mesh = ExtResource("13_ci1va")
+skeleton = NodePath("../..")
+
+[node name="KitchencounterStraightA3" type="MeshInstance3D" parent="decos"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -10.0462, 1.46109, -35.7611)
+mesh = ExtResource("13_ci1va")
+skeleton = NodePath("../..")
+
+[node name="KitchencounterStraightA4" type="MeshInstance3D" parent="decos"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -6.19114, 1.46109, -35.7611)
+mesh = ExtResource("13_ci1va")
+skeleton = NodePath("../..")
+
+[node name="KitchencounterStraightA5" type="MeshInstance3D" parent="decos"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2.27461, 1.46109, -35.7611)
+mesh = ExtResource("13_ci1va")
+skeleton = NodePath("../..")
+
+[node name="KitchencounterSinkBacksplash" type="MeshInstance3D" parent="decos"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1.56919, 1.4601, -35.7501)
+mesh = ExtResource("14_74pr7")
+skeleton = NodePath("../..")
+
+[node name="KitchentableSinkLargeDecorated" type="MeshInstance3D" parent="decos"]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, -23.4907, 1.43356, -14.2291)
+mesh = ExtResource("15_75j0j")
+skeleton = NodePath("../..")
+
+[node name="Menu" type="MeshInstance3D" parent="decos"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 10.0148, 1.34021, 23.659)
+mesh = ExtResource("16_1lmfr")
+skeleton = NodePath("../..")
+
+[node name="ShelfPapertowelDecorated" type="MeshInstance3D" parent="decos"]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, -25.4429, 3.13867, 7.07186)
+mesh = ExtResource("17_apogb")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="decos"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0824, 2.5312, -36.3893)
+shape = SubResource("BoxShape3D_xjiv8")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="decos"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1434, 3.45855, -19.3228)
+shape = SubResource("BoxShape3D_oyeha")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="decos"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.09, 2.96719, 6.89922)
+shape = SubResource("BoxShape3D_8ao61")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="decos"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.8623, 2.61208, 0.0423441)
+shape = SubResource("CylinderShape3D_bgalv")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="decos"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.4992, 2.61208, 19.0167)
+shape = SubResource("CylinderShape3D_bgalv")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="decos"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.927, 2.61208, 9.16972)
+shape = SubResource("CylinderShape3D_bgalv")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="decos"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9177, 3.63381, -4.74363)
+shape = SubResource("BoxShape3D_yksnl")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="decos"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.3073, 2.69608, -14.2305)
+shape = SubResource("BoxShape3D_ilgsg")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="decos"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.3174, 4.07837, -28.4706)
+shape = SubResource("BoxShape3D_554qb")
+
+[node name="Player" parent="." instance=ExtResource("18_ug4re")]
+transform = Transform3D(-2.5, 0, -2.18557e-07, 0, 2.5, 0, 2.18557e-07, 0, -2.5, 0, 1.4589, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(0.282843, 0.249735, -0.132787, 0, 0.187789, 0.353179, 0.282843, -0.249735, 0.132787, -5.4648, 7.24094, 6.0684)
+current = true
+
+[node name="Node3D" parent="." instance=ExtResource("19_r0jpe")]
+transform = Transform3D(0.0807383, -0.429106, -0.899638, 0, 0.902585, -0.430511, 0.996735, 0.0347587, 0.0728731, -20.8705, 4.85772, -4.91893)
+
+[node name="stove1" type="StaticBody3D" parent="." node_paths=PackedStringArray("StoveMulti", "StoveMultiDecorated")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.87131, 0, 17.6826)
+script = ExtResource("19_58fly")
+StoveMulti = NodePath("StoveMulti")
+StoveMultiDecorated = NodePath("StoveMultiDecorated")
+oven_id = "stove1"
+
+[node name="StoveMulti" type="MeshInstance3D" parent="stove1"]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, 0.308949, 1.43382, 3.39325)
+mesh = ExtResource("19_v21lc")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="stove1"]
+transform = Transform3D(1, 0, 7.10543e-15, 0, 1, 0, -7.10543e-15, 0, 1, 0.15977, 2.55653, 3.57873)
+shape = SubResource("BoxShape3D_pkatj")
+
+[node name="StoveMultiDecorated" type="MeshInstance3D" parent="stove1"]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, 0.17745, 1.58822, 3.38063)
+mesh = ExtResource("3_o8vry")
+skeleton = NodePath("../..")
+
+[node name="Plats" parent="stove1" instance=ExtResource("21_3adsk")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.15279, 8.1643, 1.65033)
+
+[node name="button" parent="stove1/Plats" index="0"]
+oven_id = "stove1"
+
+[node name="stove2" type="StaticBody3D" parent="." node_paths=PackedStringArray("StoveMulti", "StoveMultiDecorated")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4361, 0, 16.8935)
+script = ExtResource("19_58fly")
+StoveMulti = NodePath("StoveMulti")
+StoveMultiDecorated = NodePath("StoveMultiDecorated")
+oven_id = "stove2"
+
+[node name="StoveMultiDecorated" type="MeshInstance3D" parent="stove2"]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, -0.386968, 1.58822, 4.16969)
+mesh = ExtResource("3_o8vry")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="stove2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.265867, 2.55653, 4.36779)
+shape = SubResource("BoxShape3D_pkatj")
+
+[node name="StoveMulti" type="MeshInstance3D" parent="stove2"]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, -0.489968, 1.43382, 3.39325)
+mesh = ExtResource("19_v21lc")
+skeleton = NodePath("../..")
+
+[node name="Plats2" parent="stove2" instance=ExtResource("21_3adsk")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.276192, 8.1643, 2.43943)
+
+[node name="button" parent="stove2/Plats2" index="0"]
+oven_id = "stove2"
+
+[editable path="stove1/Plats"]
+[editable path="stove2/Plats2"]

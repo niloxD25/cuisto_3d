@@ -107,7 +107,7 @@ func update_ui(data):
 			plat_label.add_theme_font_size_override("font_size", 14)
 			plat_row.add_child(plat_label)
 
-						# Bouton "Choisir"
+			# Bouton "Choisir"
 			var choisir_button = Button.new()
 			choisir_button.text = "Choisir"
 			choisir_button.add_theme_color_override("font_color", Color(1, 1, 1))
@@ -123,8 +123,30 @@ func update_ui(data):
 			choisir_button.connect("pressed", Callable(self, "_on_choisir_pressed").bind(plat_id, ingredients, local_oven_id))
 			plat_row.add_child(choisir_button)
 
+			# Conteneur vertical pour afficher les ingrédients
+			var ingredients_container = VBoxContainer.new()
+			ingredients_container.add_theme_constant_override("separation", 5)
 
+			# Vérifier si des ingrédients existent
+			if ingredients.size() > 0:
+				for ingredient in ingredients:
+					var nom_ingredient = ingredient.get("nomIngredient", "Inconnu")
+					var quantite = ingredient.get("quantite", 0)
+
+					var ingredient_label = Label.new()
+					ingredient_label.text = "- %s : %s" % [nom_ingredient, quantite]
+					ingredient_label.add_theme_color_override("font_color", Color(0.8, 0.8, 0.8))  # Gris clair
+					ingredient_label.add_theme_font_size_override("font_size", 12)
+					ingredients_container.add_child(ingredient_label)
+			else:
+				var no_ingredient_label = Label.new()
+				no_ingredient_label.text = "⚠️ Aucun ingrédient trouvé"
+				no_ingredient_label.add_theme_color_override("font_color", Color(1, 0, 0))  # Rouge pour l'alerte
+				ingredients_container.add_child(no_ingredient_label)
+
+			# Ajouter l'ensemble à la commande
 			commande_box.add_child(plat_row)
+			commande_box.add_child(ingredients_container)
 
 		# Ajout de la commande au conteneur principal
 		container.add_child(commande_box)
