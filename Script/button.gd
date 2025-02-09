@@ -5,6 +5,7 @@ extends Area3D
 @export var scroll_container: ScrollContainer
 
 var http_request: HTTPRequest
+var error_label: Label  # Label pour afficher les erreurs
 
 func _ready():
 	if not window:
@@ -13,12 +14,23 @@ func _ready():
 	if window:
 		scroll_container = window.get_node("ScrollContainer")
 		container = scroll_container.get_node("VBoxContainer")
-	
+
 	http_request = HTTPRequest.new()
 	add_child(http_request)
 
 	connect("input_event", Callable(self, "_on_input_event"))
 	http_request.connect("request_completed", Callable(self, "_on_request_completed"))
+
+	# Création du label d'erreur en haut de la liste
+	if not container.has_node("ErrorLabel"):
+		error_label = Label.new()
+		error_label.name = "ErrorLabel"
+		error_label.visible = false  # Caché par défaut
+		error_label.add_theme_color_override("font_color", Color(1, 0, 0))  # Rouge
+		error_label.add_theme_font_size_override("font_size", 14)
+		container.add_child(error_label)  # Ajout au container
+	else:
+		error_label = container.get_node("ErrorLabel")
 
 func _on_input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
@@ -31,7 +43,7 @@ func perform_http_request():
 	var url = "http://192.168.1.174:8000/api/admin/stocks/all"
 	var error = http_request.request(url)
 	if error != OK:
-		print("Erreur de requête HTTP:", error)
+		show_error_message("Erreur de requête HTTP: " + str(error))
 
 func _on_request_completed(result, response_code, headers, body):
 	if response_code == 200:
@@ -42,22 +54,29 @@ func _on_request_completed(result, response_code, headers, body):
 			var parsed_data = json.data
 			update_ui(parsed_data)
 		else:
-			print("Erreur JSON:", json.get_error_message(), " Code: ", parse_error)
+			show_error_message("Erreur JSON: " + json.get_error_message())
 	else:
-		print("Erreur HTTP: Code", response_code)
+		show_error_message("Erreur HTTP: Code " + str(response_code))
 
 func update_ui(data):
+	# Nettoyage du container
 	for child in container.get_children():
 		container.remove_child(child)
 		child.queue_free()
 
+	# Ajout d'un espace vide en haut pour éviter que l'erreur ne cache les données
+	var empty_space = Control.new()
+	empty_space.custom_minimum_size = Vector2(10, 20)  # Espace vide
+	container.add_child(empty_space)
+
+	# Affichage des ingrédients
 	for item in data:
 		var ingredient = item["ingredient"]
 		var quantite = item["quantite"]
 		add_ingredient_to_ui(ingredient["id"], ingredient["nomIngredient"], ingredient["nomImage"], quantite)
 
 	await get_tree().process_frame
-	scroll_container.set_deferred("scroll_vertical", scroll_container.get_v_scroll_bar().max_value)
+	#scroll_container.set_deferred("scroll_vertical", scroll_container.get_v_scroll_bar().max_value)
 
 func add_ingredient_to_ui(ingredient_id, nom, image_path, quantite):
 	var hbox = HBoxContainer.new()
@@ -126,7 +145,7 @@ func _on_take_pressed(ingredient_id, input, qty_label, max_qty):
 	var stock_disponible = int(qty_label.text.replace("x", ""))
 
 	if quantite > stock_disponible:
-		print("⚠️ Erreur: Quantité demandée supérieure au stock disponible !")
+		show_error_message("⚠️ Quantité demandée supérieure au stock disponible !")
 		return
 
 	if quantite > 0:
@@ -134,4 +153,14 @@ func _on_take_pressed(ingredient_id, input, qty_label, max_qty):
 		qty_label.text = "x" + str(stock_disponible - quantite)
 		print("✅ Retrait enregistré. Session actuelle :", Session.get_withdrawals())
 	else:
-		print("⚠️ Aucune quantité disponible pour", ingredient_id)
+		show_error_message("⚠️ Aucune quantité disponible pour " + str(ingredient_id))
+
+# 📌 Fonction pour afficher les erreurs
+func show_error_message(message: String):
+	if error_label and is_instance_valid(error_label):
+		error_label.text = "❌ " + message
+		error_label.visible = true
+		await get_tree().create_timer(3.0).timeout  # Disparition après 3 sec
+		
+		if is_instance_valid(error_label):  # Vérification avant d'accéder à error_label
+			error_label.visible = false
