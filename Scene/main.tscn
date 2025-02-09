@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://osh8g1l6v3a3"]
+[gd_scene load_steps=35 format=3 uid="uid://osh8g1l6v3a3"]
 
 [ext_resource type="ArrayMesh" uid="uid://b8npxmqdxxocx" path="res://Assets/obj/floor_kitchen.obj" id="1_wftib"]
 [ext_resource type="ArrayMesh" uid="uid://cvlck7w68eljy" path="res://Assets/obj/wall.obj" id="2_nve8w"]
@@ -19,6 +19,7 @@
 [ext_resource type="ArrayMesh" uid="uid://i5hbk0t5iuxb" path="res://Assets/obj/shelf_papertowel_decorated.obj" id="17_apogb"]
 [ext_resource type="PackedScene" uid="uid://4i08jhcvfv4a" path="res://Scene/player.tscn" id="18_ug4re"]
 [ext_resource type="Script" path="res://Script/toggle.gd" id="19_58fly"]
+[ext_resource type="ArrayMesh" uid="uid://bl8ofp2wwkh1q" path="res://images/1.obj" id="19_achfc"]
 [ext_resource type="PackedScene" uid="uid://creuv4v4fkd37" path="res://ui/ingredients.tscn" id="19_r0jpe"]
 [ext_resource type="ArrayMesh" uid="uid://cfqjs2qhgclxk" path="res://Assets/obj/stove_multi.obj" id="19_v21lc"]
 [ext_resource type="PackedScene" uid="uid://b1ej13bnav3et" path="res://ui/plats.tscn" id="21_3adsk"]
@@ -1511,6 +1512,22 @@ current = true
 [node name="Node3D" parent="." instance=ExtResource("19_r0jpe")]
 transform = Transform3D(0.0807383, -0.429106, -0.899638, 0, 0.902585, -0.430511, 0.996735, 0.0347587, 0.0728731, -20.8705, 4.85772, -4.91893)
 
+[node name="CollisionShape3D" parent="Node3D/button" index="0"]
+transform = Transform3D(1, -5.96046e-08, -2.75671e-07, 0, 1, -1.09663e-07, 0, 1.62981e-08, 1, -0.0145888, 2.77823, -5.72205e-06)
+
+[node name="Label3D" parent="Node3D/button" index="2"]
+visible = false
+
+[node name="1" type="MeshInstance3D" parent="Node3D/button" index="3"]
+transform = Transform3D(-3, -1.2666e-07, 4.02331e-07, 1.49012e-08, 3, 7.40401e-08, -3.12924e-07, -6.70552e-08, -3, -0.265771, 3.85789, -0.116226)
+mesh = ExtResource("19_achfc")
+
+[node name="Control" parent="Node3D" index="1"]
+offset_left = 2.0
+offset_top = 413.0
+offset_right = 42.0
+offset_bottom = 453.0
+
 [node name="stove1" type="StaticBody3D" parent="." node_paths=PackedStringArray("StoveMulti", "StoveMultiDecorated")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.87131, 0, 17.6826)
 script = ExtResource("19_58fly")
@@ -1537,6 +1554,15 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.15279, 8.1643, 1.65033)
 
 [node name="button" parent="stove1/Plats" index="0"]
 oven_id = "stove1"
+
+[node name="Label3D" parent="stove1/Plats/button" index="2"]
+visible = false
+
+[node name="Control" parent="stove1/Plats" index="1"]
+offset_left = 600.0
+offset_top = 2.0
+offset_right = 640.0
+offset_bottom = 46.0
 
 [node name="stove2" type="StaticBody3D" parent="." node_paths=PackedStringArray("StoveMulti", "StoveMultiDecorated")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4361, 0, 16.8935)
@@ -1565,5 +1591,9 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.276192, 8.1643, 2.43943)
 [node name="button" parent="stove2/Plats2" index="0"]
 oven_id = "stove2"
 
+[node name="Label3D" parent="stove2/Plats2/button" index="2"]
+visible = false
+
+[editable path="Node3D"]
 [editable path="stove1/Plats"]
 [editable path="stove2/Plats2"]

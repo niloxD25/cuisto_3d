@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chk0n1yoyclau"
-valid=false
+uid="uid://c1aobl52gkalx"
+path="res://.godot/imported/Bouillon de soupe.png-31803556a39947678a7e508aa10aea4b.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://images/Bouillon de soupe.png"
+dest_files=["res://.godot/imported/Bouillon de soupe.png-31803556a39947678a7e508aa10aea4b.ctex"]
 
 [params]
 

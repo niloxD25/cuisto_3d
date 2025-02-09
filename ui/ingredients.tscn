@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Script/button.gd" id="1_ik6ks"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fgux1"]
-size = Vector3(7.93274, 3, 1)
+size = Vector3(7.93274, 5.91205, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_0qbh3"]
 

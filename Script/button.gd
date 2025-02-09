@@ -82,9 +82,13 @@ func add_ingredient_to_ui(ingredient_id, nom, image_path, quantite):
 	var hbox = HBoxContainer.new()
 	hbox.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 
+	var image = Image.load_from_file("res://images/" + image_path)
+	image.resize(35, 35, Image.INTERPOLATE_LANCZOS)  # Redimensionne l'image à 50x50 pixels
+	var image_texture = ImageTexture.create_from_image(image)
+
 	var texture = TextureRect.new()
-	texture.texture = load("res://images/" + image_path)
-	texture.custom_minimum_size = Vector2(50, 50)
+	texture.texture = image_texture
+	texture.custom_minimum_size = Vector2(30, 30)
 
 	var name_label = Label.new()
 	name_label.text = nom

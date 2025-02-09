@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb2vg6i673b0d"
-valid=false
+uid="uid://il6qi4gyivpo"
+path="res://.godot/imported/oignon.png-d75898efccb95952ab8e878028e75353.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://images/oignon.png"
+dest_files=["res://.godot/imported/oignon.png-d75898efccb95952ab8e878028e75353.ctex"]
 
 [params]
 

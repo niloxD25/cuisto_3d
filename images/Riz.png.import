@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbr81r4vqm7r6"
-valid=false
+uid="uid://blcyuyqtulx6c"
+path="res://.godot/imported/Riz.png-71564eba21c2b501b66ae154c95ab232.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://images/Riz.png"
+dest_files=["res://.godot/imported/Riz.png-71564eba21c2b501b66ae154c95ab232.ctex"]
 
 [params]
 

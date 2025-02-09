@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jlhdxlq6d2h4"
-valid=false
+uid="uid://cuppl1lqa1vxp"
+path="res://.godot/imported/Oeuf.png-b4d106c7615ec98f75beb82878863f37.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://images/Oeuf.png"
+dest_files=["res://.godot/imported/Oeuf.png-b4d106c7615ec98f75beb82878863f37.ctex"]
 
 [params]
 

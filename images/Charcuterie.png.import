@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhxwhvkr6obtg"
-valid=false
+uid="uid://bwtsmwcpvr7jr"
+path="res://.godot/imported/Charcuterie.png-e8d20f7d3f6f348b4978284b67d97ebb.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://images/Charcuterie.png"
+dest_files=["res://.godot/imported/Charcuterie.png-e8d20f7d3f6f348b4978284b67d97ebb.ctex"]
 
 [params]
 

@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwmbfsd66dn4e"
-valid=false
+uid="uid://cn0162d2suwmh"
+path="res://.godot/imported/pate.png-c6c60372e7f6896db754f4effd05764b.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://images/pate.png"
+dest_files=["res://.godot/imported/pate.png-c6c60372e7f6896db754f4effd05764b.ctex"]
 
 [params]
 
