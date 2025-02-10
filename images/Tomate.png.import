@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xmhfk5asegai"
-valid=false
+uid="uid://b1sdhu3gbwn8r"
+path="res://.godot/imported/Tomate.png-2a9f67fbe844f8ba9a35ae2099b0375b.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://images/Tomate.png"
+dest_files=["res://.godot/imported/Tomate.png-2a9f67fbe844f8ba9a35ae2099b0375b.ctex"]
 
 [params]
 

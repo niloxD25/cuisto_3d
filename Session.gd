@@ -6,7 +6,7 @@ var ingredients = {}
 var plat_id: int
 var error_label: Label  # Label pour afficher les erreurs
 var http_request: HTTPRequest  # Pour effectuer des requêtes HTTP
-var baseUrl = "http://192.168.1.174:8000/api"
+var baseUrl = "https://restaurantapi-524bf01f495e.herokuapp.com/api"
 
 func _ready():
 	# Vérifie si un label d'erreur global existe dans la scène
@@ -47,11 +47,12 @@ func update_detail_plat(idDetailMenu: int, status: String, dateHeureFini: String
 
 
 # Update stock
-func update_stock_ingredient(idIngredient: int, status: String, dateHeure: String):
+func update_stock_ingredient(idIngredient: int, status: String, quantite: int, dateHeure: String):
 	var url = baseUrl + "/plat/update"  # L'URL de l'API à modifier
 	var json_data = {
 		"idIngredient": idIngredient,
 		"status": status,
+		"quantite": quantite,
 		"dateHeure": dateHeure
 	}
 
@@ -102,6 +103,7 @@ func has_sufficient_ingredients(required_ingredients: Array) -> bool:
 	return true  # Tous les ingrédients sont disponibles en quantité suffisante
 
 # Ajoute un plat dans un four donné après vérification des ingrédients
+# Ajoute un plat dans un four donné après vérification des ingrédients
 func add_dish_to_oven(oven_id: String, plat_id: int, required_ingredients: Array, idDetail: int) -> bool:
 	if oven_id in oven_dishes:
 		show_error_message("❌ Le four %s contient déjà un plat !" % oven_id)
@@ -117,7 +119,16 @@ func add_dish_to_oven(oven_id: String, plat_id: int, required_ingredients: Array
 	self.plat_id = plat_id  # Stocke le plat actuellement ajouté
 	self.ingredients = required_ingredients
 	
+	# Met à jour le statut du plat
 	update_detail_plat(idDetail, "en cuisson", "")
+
+	# Mise à jour du stock pour chaque ingrédient utilisé
+	for ingredient in required_ingredients:
+		var ingredient_id = ingredient.get("id", null)
+		var quantity_used = ingredient.get("quantite", 0)
+
+		if ingredient_id != null:
+			update_stock_ingredient(ingredient_id, "utilisé", quantity_used, "")
 
 	print("✅ Plat '%s' ajouté au four %s avec les ingrédients requis." % [plat_id, oven_id])
 	return true

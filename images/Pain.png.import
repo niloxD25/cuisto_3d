@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://y2e6l6s5g1pf"
-valid=false
+uid="uid://cxc2tn4l5d76j"
+path="res://.godot/imported/Pain.png-17445620181c5359029e09be1ac06808.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://images/Pain.png"
+dest_files=["res://.godot/imported/Pain.png-17445620181c5359029e09be1ac06808.ctex"]
 
 [params]
 

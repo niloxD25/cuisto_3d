@@ -19,7 +19,7 @@
 [ext_resource type="ArrayMesh" uid="uid://i5hbk0t5iuxb" path="res://Assets/obj/shelf_papertowel_decorated.obj" id="17_apogb"]
 [ext_resource type="PackedScene" uid="uid://4i08jhcvfv4a" path="res://Scene/player.tscn" id="18_ug4re"]
 [ext_resource type="Script" path="res://Script/toggle.gd" id="19_58fly"]
-[ext_resource type="ArrayMesh" uid="uid://bl8ofp2wwkh1q" path="res://images/1.obj" id="19_achfc"]
+[ext_resource type="ArrayMesh" uid="uid://cq7cs62pdcv4r" path="res://images/1.obj" id="19_achfc"]
 [ext_resource type="PackedScene" uid="uid://creuv4v4fkd37" path="res://ui/ingredients.tscn" id="19_r0jpe"]
 [ext_resource type="ArrayMesh" uid="uid://cfqjs2qhgclxk" path="res://Assets/obj/stove_multi.obj" id="19_v21lc"]
 [ext_resource type="PackedScene" uid="uid://b1ej13bnav3et" path="res://ui/plats.tscn" id="21_3adsk"]

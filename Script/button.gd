@@ -7,7 +7,7 @@ extends Area3D
 var http_request: HTTPRequest
 var error_label: Label  # Label pour afficher les erreurs
 
-var baseUrl = "http://192.168.1.174:8000/api"
+var baseUrl = "https://restaurantapi-524bf01f495e.herokuapp.com/api"
 
 func _ready():
 	if not window:
