@@ -2,16 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s586ybwtpl4k"
-path="res://.godot/imported/Porc.png-b389cf331d0e0795683236b2a59c8217.ctex"
-metadata={
-"vram_texture": false
-}
+uid="uid://y6cvyujo5p4e"
+valid=false
 
 [deps]
 
 source_file="res://images/Porc.png"
-dest_files=["res://.godot/imported/Porc.png-b389cf331d0e0795683236b2a59c8217.ctex"]
 
 [params]
 

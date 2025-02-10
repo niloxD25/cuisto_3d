@@ -8,6 +8,8 @@ extends Area3D
 var http_request: HTTPRequest
 var error_label: Label  # Label pour afficher les erreurs
 
+var baseUrl = "http://192.168.1.174:8000/api"
+
 func _ready():
 	if not window:
 		window = get_parent().get_node_or_null("Control")
@@ -41,7 +43,7 @@ func _on_input_event(camera, event, position, normal, shape_idx):
 			window.visible = !window.visible
 
 func perform_http_request():
-	var url = "http://192.168.1.174:8000/api/admin/commandes/all"
+	var url = baseUrl + "/admin/commandes/all"
 	var error = http_request.request(url)
 	if error != OK:
 		show_error_message("Erreur de requête HTTP: " + str(error))
@@ -106,6 +108,7 @@ func update_ui(data):
 				show_error_message("⚠️ Données du plat absentes ou invalides.")
 				continue
 
+			var idDetail = detail["plat"].get("id", 0)
 			var plat = detail["plat"]
 			var nom_plat = plat.get("nomPlat", "Plat inconnu")
 			var prix_unitaire = plat.get("prixUnitaire", "0.00")
@@ -113,24 +116,38 @@ func update_ui(data):
 			var local_oven_id = plat.get("oven_id", oven_id)  # Utilise l'`oven_id` exporté si aucun n'est spécifié
 
 			# Conteneur du plat
-			var plat_box = VBoxContainer.new()
-			plat_box.add_theme_constant_override("separation", 5)
+			var plat_box = HBoxContainer.new()  # Changé en HBoxContainer pour aligner l'image et le texte
+			plat_box.add_theme_constant_override("separation", 10)
+
+			# Ajouter l'image du plat
+			var image = Image.load_from_file("res://images/plat.png")
+			image.resize(100, 100, Image.INTERPOLATE_LANCZOS)  # Redimensionne l'image à 50x50 pixels
+			var image_texture = ImageTexture.create_from_image(image)
+
+			var texture = TextureRect.new()
+			texture.texture = image_texture
+			texture.custom_minimum_size = Vector2(100, 100)
+			plat_box.add_child(texture)
+
+			# Conteneur pour les informations du plat
+			var plat_info_box = VBoxContainer.new()
+			plat_info_box.add_theme_constant_override("separation", 5)
 
 			# Label pour le plat
 			var plat_label = Label.new()
-			plat_label.text = "🍽 %s - %s Ar (Cuisson : %s)" % [nom_plat, prix_unitaire, temps_cuisson]
+			plat_label.text = "%s - %s Ar (Cuisson : %s)" % [nom_plat, prix_unitaire, temps_cuisson]
 			plat_label.add_theme_color_override("font_color", Color(1, 1, 1))  # Blanc
 			plat_label.add_theme_font_size_override("font_size", 14)
-			plat_box.add_child(plat_label)
+			plat_info_box.add_child(plat_label)
 
 			# Vérifier si "ingredients" existe et est une liste
 			var ingredients_list = plat.get("ingredients", [])
 			if ingredients_list is Array and ingredients_list.size() > 0:
 				var ingredients_title = Label.new()
-				ingredients_title.text = "🛒 Ingrédients :"
+				ingredients_title.text = "Ingrédients :"
 				ingredients_title.add_theme_color_override("font_color", Color(1, 0.5, 0))  # Orange
 				ingredients_title.add_theme_font_size_override("font_size", 13)
-				plat_box.add_child(ingredients_title)
+				plat_info_box.add_child(ingredients_title)
 
 				for ingredient in ingredients_list:
 					var nom_ingredient = ingredient.get("nomIngredient", "Ingrédient inconnu")
@@ -140,7 +157,7 @@ func update_ui(data):
 					ingredient_label.text = "- %s (x%s)" % [nom_ingredient, quantite]
 					ingredient_label.add_theme_color_override("font_color", Color(1, 1, 1))  # Blanc
 					ingredient_label.add_theme_font_size_override("font_size", 12)
-					plat_box.add_child(ingredient_label)
+					plat_info_box.add_child(ingredient_label)
 
 			# Bouton "Choisir"
 			var choisir_button = Button.new()
@@ -150,8 +167,11 @@ func update_ui(data):
 			choisir_button.add_theme_stylebox_override("normal", create_button_style(Color(0.3, 0.3, 0.3)))
 
 			var plat_id = plat.get("id", 0)
-			choisir_button.connect("pressed", Callable(self, "_on_choisir_pressed").bind(plat_id, ingredients_list, local_oven_id))
-			plat_box.add_child(choisir_button)
+			choisir_button.connect("pressed", Callable(self, "_on_choisir_pressed").bind(plat_id, ingredients_list, local_oven_id, idDetail))
+			plat_info_box.add_child(choisir_button)
+
+			# Ajouter les informations du plat à la boîte du plat
+			plat_box.add_child(plat_info_box)
 
 			# Ajouter l'ensemble à la commande
 			commande_box.add_child(plat_box)
@@ -177,10 +197,10 @@ func create_button_style(color: Color) -> StyleBoxFlat:
 	style.corner_radius_top_right = 4
 	return style
 
-func _on_choisir_pressed(plat_id: int, ingredients: Array, oven_id: String):
+func _on_choisir_pressed(plat_id: int, ingredients: Array, oven_id: String, idDetail: int):
 	print("Plat choisi : ID =", plat_id, "Pour le four :", oven_id, "Ingrédients :", ingredients)
 	var session = get_node("/root/Session")
-	var success = session.add_dish_to_oven(oven_id, plat_id, ingredients)
+	var success = session.add_dish_to_oven(oven_id, plat_id, ingredients, idDetail)
 
 	if success:
 		print("✅ Plat ID '%s' ajouté au four %s" % [plat_id, oven_id])

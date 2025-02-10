@@ -5,6 +5,8 @@ var oven_dishes = {}  # Stockage des plats dans chaque four (StaticBody3D)
 var ingredients = {}
 var plat_id: int
 var error_label: Label  # Label pour afficher les erreurs
+var http_request: HTTPRequest  # Pour effectuer des requêtes HTTP
+var baseUrl = "http://192.168.1.174:8000/api"
 
 func _ready():
 	# Vérifie si un label d'erreur global existe dans la scène
@@ -20,6 +22,54 @@ func _ready():
 
 		# Utilisation de call_deferred pour éviter le problème d'ajout trop tôt
 		root.call_deferred("add_child", error_label)
+
+	# Initialisation de la requête HTTP
+	http_request = HTTPRequest.new()
+	add_child(http_request)
+
+# Fonction pour effectuer une requête PUT
+func update_detail_plat(idDetailMenu: int, status: String, dateHeureFini: String):
+	var url = baseUrl + "/plat/update"  # L'URL de l'API à modifier
+	var json_data = {
+		"idDetailMenu": idDetailMenu,
+		"status": status,
+		"dateHeureFini": dateHeureFini
+	}
+
+	# Convertir les données en JSON
+	var json_string = JSON.stringify(json_data)
+
+	# Effectuer la requête PUT avec le corps en JSON
+	var headers = ["Content-Type: application/json"]
+	var error = http_request.request(url, headers, HTTPClient.METHOD_PUT, json_string)
+	if error != OK:
+		show_error_message("Erreur lors de l'envoi de la requête PUT: " + str(error))
+
+
+# Update stock
+func update_stock_ingredient(idIngredient: int, status: String, dateHeure: String):
+	var url = baseUrl + "/plat/update"  # L'URL de l'API à modifier
+	var json_data = {
+		"idIngredient": idIngredient,
+		"status": status,
+		"dateHeure": dateHeure
+	}
+
+	# Convertir les données en JSON
+	var json_string = JSON.stringify(json_data)
+
+	# Effectuer la requête POST avec le corps en JSON
+	var headers = ["Content-Type: application/json"]
+	var error = http_request.request(url, headers, HTTPClient.METHOD_POST, json_string)
+	if error != OK:
+		show_error_message("Erreur lors de l'envoi de la requête POST: " + str(error))
+
+# Fonction pour gérer la réponse de la requête POST
+func _on_request_completed(result, response_code, headers, body):
+	if response_code == 200:
+		print("✅ Requête POST réussie.")
+	else:
+		show_error_message("Erreur lors de l'actualisation. Code réponse: " + str(response_code))
 
 # Ajoute un retrait d'ingrédient
 func add_withdrawal(ingredient_id, quantite):
@@ -52,7 +102,7 @@ func has_sufficient_ingredients(required_ingredients: Array) -> bool:
 	return true  # Tous les ingrédients sont disponibles en quantité suffisante
 
 # Ajoute un plat dans un four donné après vérification des ingrédients
-func add_dish_to_oven(oven_id: String, plat_id: int, required_ingredients: Array) -> bool:
+func add_dish_to_oven(oven_id: String, plat_id: int, required_ingredients: Array, idDetail: int) -> bool:
 	if oven_id in oven_dishes:
 		show_error_message("❌ Le four %s contient déjà un plat !" % oven_id)
 		return false  # Impossible d'ajouter un plat s'il y en a déjà un
@@ -66,6 +116,8 @@ func add_dish_to_oven(oven_id: String, plat_id: int, required_ingredients: Array
 	oven_dishes[oven_id] = plat_id
 	self.plat_id = plat_id  # Stocke le plat actuellement ajouté
 	self.ingredients = required_ingredients
+	
+	update_detail_plat(idDetail, "en cuisson", "")
 
 	print("✅ Plat '%s' ajouté au four %s avec les ingrédients requis." % [plat_id, oven_id])
 	return true

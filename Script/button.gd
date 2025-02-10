@@ -7,6 +7,8 @@ extends Area3D
 var http_request: HTTPRequest
 var error_label: Label  # Label pour afficher les erreurs
 
+var baseUrl = "http://192.168.1.174:8000/api"
+
 func _ready():
 	if not window:
 		window = get_parent().get_node_or_null("Control")
@@ -40,7 +42,7 @@ func _on_input_event(camera, event, position, normal, shape_idx):
 			window.visible = !window.visible
 
 func perform_http_request():
-	var url = "http://192.168.1.174:8000/api/admin/stocks/all"
+	var url = baseUrl + "/admin/stocks/all"
 	var error = http_request.request(url)
 	if error != OK:
 		show_error_message("Erreur de requête HTTP: " + str(error))

@@ -1555,7 +1555,12 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.15279, 8.1643, 1.65033)
 [node name="button" parent="stove1/Plats" index="0"]
 oven_id = "stove1"
 
-[node name="Label3D" parent="stove1/Plats/button" index="2"]
+[node name="1" type="MeshInstance3D" parent="stove1/Plats/button" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.833886, 0.551937, 0, -0.551937, -0.833886, 0.116946, 0.583985, 0.204545)
+mesh = ExtResource("19_achfc")
+skeleton = NodePath("../../../..")
+
+[node name="Label3D" parent="stove1/Plats/button" index="3"]
 visible = false
 
 [node name="Control" parent="stove1/Plats" index="1"]
@@ -1593,6 +1598,11 @@ oven_id = "stove2"
 
 [node name="Label3D" parent="stove2/Plats2/button" index="2"]
 visible = false
+
+[node name="1" type="MeshInstance3D" parent="stove2/Plats2/button" index="3"]
+transform = Transform3D(1, 0, 0, 0, -0.833886, 0.551937, 0, -0.551937, -0.833886, 0.116946, 0.583985, 0.204545)
+mesh = ExtResource("19_achfc")
+skeleton = NodePath("../../../..")
 
 [editable path="Node3D"]
 [editable path="stove1/Plats"]

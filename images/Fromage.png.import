@@ -2,16 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pm87sn2bjunm"
-path="res://.godot/imported/Fromage.png-1cc592284015b29057173b162c8947c2.ctex"
-metadata={
-"vram_texture": false
-}
+uid="uid://cklblafiennv6"
+valid=false
 
 [deps]
 
 source_file="res://images/Fromage.png"
-dest_files=["res://.godot/imported/Fromage.png-1cc592284015b29057173b162c8947c2.ctex"]
 
 [params]
 
